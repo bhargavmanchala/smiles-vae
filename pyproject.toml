@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smiles-vae"
+version = "0.1.0"
+description = "A small convolutional variational autoencoder that generates SMILES strings."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Bhargav Manchala" }]
+dependencies = ["numpy", "tensorflow>=2.12", "rdkit", "matplotlib"]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "nbformat"]
+
+[project.scripts]
+smiles-vae = "smiles_vae.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+src = ["src", "tests"]
+extend-exclude = ["legacy", "notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

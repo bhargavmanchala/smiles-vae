@@ -1,0 +1,6 @@
+# One SMILES per line. Text after the first token is ignored.
+CCO       ethanol
+CC(=O)O   acetic acid
+CCC       propane
+CCN       ethylamine
+CCOCC     diethyl ether
